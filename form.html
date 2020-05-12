@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content_Type"/>
+  <link rel="stylesheet" href="style.css">
+  <title>form for article</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="open-modal" class="knopka">
+	<button class="open-modal__submit">Войти</button>
+</div>
+<div id="modal-authentication" class="modal-authentication">
+  <div class="modal-authentication__container">
+    <img class="modal-authentication__logo" src="media/logo.png">
+    <h4>ДОБРО ПОЖАЛОВАТЬ В МИР АУДИТА</h4>
+    <form>
+      <div class="modal-authentication__login_details">
+        <textarea class="modal-authentication__login_details__user-name" required placeholder='Email или телефон'></textarea></br>
+        <textarea class="modal-authentication__login_details__user-password" required placeholder='Пароль'></textarea>
+      </div>
+      <div class="modal-authentication__password-setting">
+          <input type="checkbox">
+          <a class="save-data">Запомнить пароль</a>
+          <a href="">Сбросить пароль</a>
+      </div>
+      <input class="modal-authentication__authentication" type="submit" name="submit" value="Войти">
+    </form>
+    <div class="modal-authentication_set-registration">
+      <a>Первый раз на сайте? </a><a class="registration" href="#registration">Зарегистрироваться</a>
+    </div>
+    <div class="modal-authentication__login-network">
+      <a href=""><img class="modal-authentication__network" src="media/vk.png"></a>
+      <a href=""><img class="modal-authentication__network" src="media/facebook.png"></a>
+      <a href=""><img class="modal-authentication__network" src="media/twitter.png"></a>
+    </div>
+  </div>
+  <div class="modal-registration__container">
+    <img class="modal-authentication__logo" src="media/logo.png">
+    <h4>ДОБРО ПОЖАЛОВАТЬ В МИР АУДИТА</h4>
+    <form>
+      <div class="modal-registration__login_details">
+        <textarea class="modal-authentication__login_details__user-name" required placeholder='Email или телефон'></textarea></br>
+        <textarea class="modal-authentication__login_details__user-password" required placeholder='Пароль'></textarea></br>
+        <textarea class="modal-authentication__login_details__user-password-replay" required placeholder='Подтвердите пароль'></textarea>
+      </div>
+      <input class="modal-registration__authentication" type="submit" name="submit" value="Войти">
+    </form>
+    <div class="modal-authentication_set-authentication">
+      <a>У вас уже есть аккаунт? </a><a class="authentication" href="#authentication">Войти</a>
+    </div>
+  </div>
+</div>
+<script>
+  $(".registration").on("click",function (){
+      $(".modal-registration__container").css("display","flex");
+      $(".modal-authentication__container").css("display","none");
+  });
+  $(".authentication").on("click",function (){
+    $(".modal-registration__container").css("display","none");
+    $(".modal-authentication__container").css("display","flex");
+  });
+  $(".open-modal__submit").on("click",function (){
+      $(".modal-authentication").css("display","inline");
+  });
+  $(document).mouseup(function (e){
+		var div1 = $(".modal-registration__container");
+    var div2 = $(".modal-authentication__container");
+		if (!div1.is(e.target)
+		    && div1.has(e.target).length === 0 && !div2.is(e.target)
+    		    && div2.has(e.target).length === 0) {
+		    $(".modal-authentication").css("display","none");
+        $(".modal-registration__container").css("display","none");
+        $(".modal-authentication__container").css("display","flex");
+		}
+	});
+</script>
+</body>
+</html>
