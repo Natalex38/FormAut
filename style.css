@@ -1,0 +1,145 @@
+.open-modal__submit{
+  width: 240px;
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(191,191,191,0.8);
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-authentication{
+  background: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  min-height: 1400px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+@media (max-width: 890px) {
+  .modal-authentication__container{
+    margin-top: 80px;
+  }
+}
+@media (min-width: 891px) {
+  .modal-authentication__container{
+    margin-top: 205px;
+  }
+}
+
+@media (max-width: 890px) {
+  .modal-registration__container{
+    margin-top: 80px;
+  }
+}
+@media (min-width: 891px) {
+  .modal-registration__container{
+    margin-top: 205px;
+  }
+}
+.modal-authentication__container{
+width:400px;
+height: auto;
+background-color: #fff;
+margin-left: auto;
+margin-right: auto;
+border-radius: 3px;
+text-align: center;
+display:flex;
+flex-direction: column;
+}
+
+.modal-registration__container{
+width:400px;
+height: auto;
+background-color: #fff;
+margin-left: auto;
+margin-right: auto;
+border-radius: 3px;
+text-align: center;
+display: none;
+flex-direction: column;
+}
+
+.modal-authentication__container img{
+width:100px;
+height: auto;
+margin-top: 30px;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+}
+.modal-registration__container img{
+width:100px;
+height: auto;
+margin-top: 30px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.login_details{
+  display: block;
+}
+
+.modal-authentication__login-network{
+  height: 120px;
+}
+
+.modal-authentication__login-network .modal-authentication__network{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.modal-authentication__login_details textarea{
+  width:300px;
+  height: 40px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  padding-left: 10px;
+  resize: none;
+}
+.modal-registration__login_details textarea{
+  width:300px;
+  height: 40px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  padding-left: 10px;
+  resize: none;
+}
+
+.modal-authentication__authentication{
+  width: 300px;
+  height: 40px;
+  background-color: #5580f1;
+  border-radius: 2px;
+  border:none;
+}
+.modal-registration__authentication{
+  width: 300px;
+  height: 40px;
+  background-color: #72bd6b;
+  border-radius: 2px;
+  border:none;
+}
+
+
+.modal-authentication__password-setting .save-data{
+  padding-right: 30px;
+}
+
+.modal-authentication__password-setting{
+  padding-bottom: 10px;
+}
+
+
+.modal-authentication_set-authentication{
+  padding-bottom: 20px;
+}
