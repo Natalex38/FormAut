@@ -1,6 +1,7 @@
 <html>
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content_Type"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
   <title>form for article</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -59,11 +60,9 @@
   }
   $(".registration").on("click",function (){
       swap_blok(".modal-registration__container",".modal-authentication__container");
-      $(".modal-article__close").css("background-color","#72bd6b");
   });
   $(".authentication").on("click",function (){
     swap_blok(".modal-authentication__container",".modal-registration__container");
-    $(".modal-article__close").css("background-color","#5580f1");
   });
   $(".open-modal__submit").on("click",function (){
       $(".modal-authentication").show();
