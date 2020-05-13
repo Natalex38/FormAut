@@ -11,6 +11,7 @@
 </div>
 <div id="modal-authentication" class="modal-authentication">
   <div class="modal-authentication__container">
+  <button class="modal-article__close"></button>
     <img class="modal-authentication__logo" src="media/logo.png">
     <h4>ДОБРО ПОЖАЛОВАТЬ В МИР АУДИТА</h4>
     <form>
@@ -35,6 +36,7 @@
     </div>
   </div>
   <div class="modal-registration__container">
+    <button class="modal-article__close"></button>
     <img class="modal-authentication__logo" src="media/logo.png">
     <h4>ДОБРО ПОЖАЛОВАТЬ В МИР АУДИТА</h4>
     <form>
@@ -51,26 +53,31 @@
   </div>
 </div>
 <script>
+  function swap_blok(show_blok, invis_bloc){
+      $(show_blok).show();
+      $(invis_bloc).hide();
+  }
   $(".registration").on("click",function (){
-      $(".modal-registration__container").css("display","flex");
-      $(".modal-authentication__container").css("display","none");
+      swap_blok(".modal-registration__container",".modal-authentication__container");
+      $(".modal-article__close").css("background-color","#72bd6b");
   });
   $(".authentication").on("click",function (){
-    $(".modal-registration__container").css("display","none");
-    $(".modal-authentication__container").css("display","flex");
+    swap_blok(".modal-authentication__container",".modal-registration__container");
+    $(".modal-article__close").css("background-color","#5580f1");
   });
   $(".open-modal__submit").on("click",function (){
-      $(".modal-authentication").css("display","inline");
+      $(".modal-authentication").show();
   });
-  $(document).mouseup(function (e){
-		var div1 = $(".modal-registration__container");
-    var div2 = $(".modal-authentication__container");
-		if (!div1.is(e.target)
-		    && div1.has(e.target).length === 0 && !div2.is(e.target)
-    		    && div2.has(e.target).length === 0) {
-		    $(".modal-authentication").css("display","none");
-        $(".modal-registration__container").css("display","none");
-        $(".modal-authentication__container").css("display","flex");
+  $(".modal-article__close").on("click",function (){
+      $(".modal-authentication").hide();
+  });
+  $(".modal-authentication").on("click",function (e){//функция запускается при нажатии на .modal-authentication
+		var div_aut_modal = $(".modal-registration__container"); //указываем класс элемента клик по кторому нужно исключить
+    		var div_reg_modal = $(".modal-authentication__container"); //указываем класс элемента клик по кторому нужно исключить
+		if (!div_aut_modal.is(e.target) // если клик был не по нашим блокам и не по его дочерним эллемнтам 
+		    && div_aut_modal.has(e.target).length === 0 && !div_reg_modal.is(e.target)
+    		    && div_reg_modal.has(e.target).length === 0) {
+		    $(".modal-authentication").hide(); //то скрываем
 		}
 	});
 </script>
